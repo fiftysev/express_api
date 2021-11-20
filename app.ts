@@ -1,23 +1,24 @@
 import express from "express";
+import bodyParser from "body-parser";
 import userRouter from "./src/routers/userRouter";
+import tweetRouter from "./src/routers/tweetRouter";
 
 const app = express();
 
-const urlencodedParser = express.urlencoded({extended: false});
 const PORT = 3000;
 
+// middlewares for parsing req.body
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+
+// add routers
+// TODO: -Create main router for manips
 app.use("/users", userRouter);
+app.use("/tweet", tweetRouter);
 
 app.get('/', (req: express.Request, res: express.Response) => {
-  res.send("Hello world");
+  res.send("Main route");
 })
-
-// app.post('/', urlencodedParser, (req: express.Request, res: express.Response) => {
-  // const name= req.body.name;
-  // const responseMessage = "Hello " + name + "!"
-  // res.send(responseMessage)
-// })
-
 
 //TODO: Написать роут для твиттов (напр. /post)
 //TODO: Написать запрос для получения всех твиттов (пока можно хранить ввиде JSON файла или JS объекта)

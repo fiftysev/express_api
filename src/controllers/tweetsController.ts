@@ -2,7 +2,6 @@ import {Request, Response} from "express";
 import tweets from "../mocks/tweets.json";
 
 type Tweet = {
-  id: number,
   avatar: string,
   name: string,
   username: string,
@@ -30,7 +29,11 @@ class tweetsController {
     return res.status(200).json(tweets);
   }
 
-  private createTweet(req: Request<{}, {}, Tweet>, res: Response) {
+  public createTweet(req: Request<{}, {}, Tweet>, res: Response) {
+    if (req.body) {
+      return res.status(200).json(req.body);
+    }
+    return res.status(400).json({"error": "Invalid tweet data!"});
   }
 }
 
