@@ -1,7 +1,7 @@
 import {Request, Response} from "express";
 import users from "../mocks/users.json";
 
-class usersContoller {
+class UsersContoller {
   public getById(req: Request, res: Response) {
     if (!req.params.id) {
       return res.status(400).json({"error": "Add id parameter!"});
@@ -22,4 +22,4 @@ class usersContoller {
   }
 }
 
-export default usersContoller;
+export default UsersContoller;

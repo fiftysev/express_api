@@ -1,0 +1,32 @@
+[
+  {
+    "id": 0,
+    "place": 1,
+    "tag": "Ovium",
+    "mentions": 837772
+  },
+  {
+    "id": 1,
+    "place": 2,
+    "tag": "Zuvy",
+    "mentions": 637642
+  },
+  {
+    "id": 2,
+    "place": 3,
+    "tag": "Slofast",
+    "mentions": 281094
+  },
+  {
+    "id": 3,
+    "place": 4,
+    "tag": "Ultrasure",
+    "mentions": 485123
+  },
+  {
+    "id": 4,
+    "place": 5,
+    "tag": "Elpro",
+    "mentions": 39564
+  }
+]

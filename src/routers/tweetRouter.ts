@@ -1,8 +1,8 @@
 import {Router} from "express";
-import tweetsController from "../controllers/tweetsController";
+import TweetsController from "../controllers/tweetsController";
 
 const tweetRouter = Router();
-const controller = new tweetsController();
+const controller = new TweetsController();
 
 //get by id
 tweetRouter.get("/:id", controller.getById);

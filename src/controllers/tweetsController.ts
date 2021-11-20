@@ -9,7 +9,7 @@ type Tweet = {
   text?: string 
 }
 
-class tweetsController {
+class TweetsController {
   public getById(req: Request, res: Response) {
     if (!req.params.id) {
       return res.status(400).json({"error": "Add id parameter!"});
@@ -37,4 +37,4 @@ class tweetsController {
   }
 }
 
-export default tweetsController;
+export default TweetsController;
