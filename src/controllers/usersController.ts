@@ -1,9 +1,8 @@
 import {Request, Response} from "express";
 import users from "../mocks/users.json";
-import userRouter from "../routers/userRouter";
 
 class usersContoller {
-  public findById(req: Request, res: Response) {
+  public getById(req: Request, res: Response) {
     if (!req.params.id) {
       return res.status(400).json({"error": "Add id parameter!"});
     } 
