@@ -2,6 +2,7 @@ require("dotenv").config();
 import express from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
+import cors from "cors";
 
 import userRouter from "./src/routers/userRouter";
 import tweetRouter from "./src/routers/tweetRouter";
@@ -10,6 +11,7 @@ import helperRouter from "./src/routers/helperRouter";
 const app = express();
 
 // middlewares for parsing req.body
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 

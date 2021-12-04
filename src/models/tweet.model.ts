@@ -7,8 +7,6 @@ const TweetSchema = new Schema({
   username: { type: String, required: true },
   image: { type: String, default: null },
   text: { type: String, default: null },
-  followers: { type: Number, default: 0, required: true },
-  following: { type: Number, default: 0, required: true },
   likes: { type: Number, default: 0, required: true },
   retweets: { type: Number, default: 0, required: true },
   comments: { type: Number, default: 0, required: true },
