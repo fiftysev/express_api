@@ -2,6 +2,7 @@ import { IUser } from "./interfaces/user.interface";
 import { Schema, model } from "mongoose";
 
 const UserSchema = new Schema({
+  id: { type: Number, required: true },
   avatar: { type: String, default: "" },
   background: { type: String, default: "" },
   name: { type: String, required: true },

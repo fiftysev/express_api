@@ -1,7 +1,8 @@
 import { Document } from "mongoose";
 
 export interface IUser extends Document {
-  id?: string;
+  _id?: string;
+  id: number;
   avatar: string;
   background?: string;
   country?: string;
