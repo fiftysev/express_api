@@ -14,8 +14,8 @@ class TweetsController {
     if (!req.params.id) {
       return res.status(400).json({ error: "Add id parameter!" });
     }
-    const tweetId: string = req.params.id;
-    const tweet = await tweetModel.findById(tweetId);
+    const tweetId: number = +req.params.id;
+    const tweet = await tweetModel.findOne({ id: tweetId });
     if (tweet) {
       return res.status(200).json(tweet);
     }

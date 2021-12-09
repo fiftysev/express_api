@@ -11,7 +11,12 @@ import helperRouter from "./src/routers/helperRouter";
 const app = express();
 
 // middlewares for parsing req.body
-app.use(cors());
+app.use(
+  cors({
+    credentials: true,
+    origin: "http://localhost:3000",
+  })
+);
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
