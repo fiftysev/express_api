@@ -33,9 +33,10 @@ class TweetsController {
   async createTweet(req: Request<{}, {}, Tweet>, res: Response) {
     if (req.body as Tweet) {
       const { avatar, name, username, image, text } = req.body;
-      const tweet = new tweetModel({ avatar, name, username, image, text });
+      const id = (await tweetModel.countDocuments({})) + 1;
+      const tweet = new tweetModel({ id, avatar, name, username, image, text });
       await tweet.save();
-      return res.status(200).json(tweet);
+      return res.status(201).json(tweet);
     }
     return res.status(400).json({ error: "Invalid tweet data!" });
   }
