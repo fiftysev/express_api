@@ -6,8 +6,8 @@ class UsersContoller {
     if (!req.params.id) {
       return res.status(400).json({ error: "Add id parameter!" });
     }
-    const userId: string = req.params.id;
-    const user = await userModel.findById(userId);
+    const userId: number = +req.params.id;
+    const user = await userModel.findOne({ id: userId });
     if (user) {
       return res.status(200).json(user);
     }
